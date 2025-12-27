@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char ch;
+    FILE *fp = fopen("input.txt","r");
+
+    while((ch=fgetc(fp))!=EOF) {
+        if (isspace(ch)) continue;
+        if (ch=='/') {
+            char next = fgetc(fp);
+            if (next=='/' || next=='*') continue;
+        }
+        printf("%c", ch);
+    }
+    fclose(fp);
+    return 0;
+}
