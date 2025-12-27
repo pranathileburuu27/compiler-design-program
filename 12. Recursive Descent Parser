@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+void E(); void T(); void F();
+char input[20];
+int i=0;
+
+void E() { T(); }
+void T() { F(); }
+void F() {
+    if(input[i]=='a') i++;
+    else printf("Error");
+}
+
+int main() {
+    scanf("%s", input);
+    E();
+    if(input[i]=='\0')
+        printf("Accepted");
+    else
+        printf("Rejected");
+}
