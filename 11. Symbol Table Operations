@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h>
+
+struct symbol {
+    char name[20];
+};
+
+int main() {
+    struct symbol table[10];
+    int n=0;
+    strcpy(table[n++].name,"x");
+    strcpy(table[n++].name,"y");
+
+    for(int i=0;i<n;i++)
+        printf("%s\n",table[i].name);
+
+    return 0;
+}
